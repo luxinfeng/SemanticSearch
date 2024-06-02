@@ -4,9 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.luxinfeng</groupId>
+    <groupId>io.github.luxinfeng</groupId>
     <artifactId>SemanticSearch</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
+    <description>提供开箱即用的语义相似度计算等功能</description>
 
     <dependencies>
         <dependency>
@@ -35,8 +36,56 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
+    <distributionManagement>
+    <snapshotRepository>
+        <id>central</id>
+        <url>https://central.sonatype.com/</url>
+    </snapshotRepository>
+    </distributionManagement>
+
+    <!--项目访问url -->
+    <url>https://github.com/luxinfeng/SemanticSearch</url>
+    <scm>
+        <!--项目访问url -->
+        <url>https://github.com/luxinfeng/SemanticSearch</url>
+        <!--项目访问url.git结尾 -->
+        <connection>scm:git:https://github.com/luxinfeng/SemanticSearch.git</connection>
+        <!--项目访问url.git结尾 -->
+        <developerConnection>scm:git:https://github.com/luxinfeng/SemanticSearch.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>xinfeng</id>
+            <name>xinfeng</name>
+            <email>nimingxiaofeng@gmail.com</email>
+            <!--项目访问url -->
+            <url>https://github.com/luxinfeng/SemanticSearch</url>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <tokenAuth>true</tokenAuth>
+                </configuration>
+            </plugin>
+
             <!-- Maven Jar Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
