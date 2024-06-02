@@ -1,7 +1,13 @@
 
 # SemanticSearch
 
-SemanticSearch 是一个用于计算语义相似度的 Java SDK，开源且免费。它使用 Hugging Face 的模型来生成句子的向量表示，并计算字符串之间的语义相似度。
+SemanticSearch 是一个用于计算语义相似度的 Java SDK，开源且免费。它默认使用 Hugging Face 的模型（Nomic-embed-text-v1，强于OPENAI的text-embedding-ada-002和text-embeddings-v3-small）来生成句子的向量表示，并计算字符串之间的语义相似度，您可以根据实际情况切换任意ONNX格式的模型。
+| Name                        | SeqLen | MTEB | LoCo  | Jina Long Context | Open Weights | Open Training Code | Open Data |
+|-----------------------------|--------|------|-------|--------------------|--------------|--------------------|-----------|
+| nomic-embed-text-v1         | 8192   | 62.39| 85.53 | 54.16              | ✅            | ✅                  | ✅         |
+| jina-embeddings-v2-base-en  | 8192   | 60.39| 85.45 | 51.90              | ✅            | ❌                  | ❌         |
+| text-embedding-3-small      | 8191   | 62.26| 82.40 | 58.20              | ❌            | ❌                  | ❌         |
+| text-embedding-ada-002      | 8191   | 60.99| 52.70 | 55.25              | ❌            | ❌                  | ❌         |
 
 ## 特性
 
